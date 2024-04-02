@@ -16,10 +16,14 @@ user_food = st.sidebar.selectbox('What is your favorite food?', ['', 'Tom Yum Ku
 tab1, tab2, tab3 = st.tabs(['Name', 'Emoji', 'Food'])
 
 with tab1:
-  if user_name != '':
-    st.write(f'hello {user_name}')
-  else:
-    st.write('Enter your name')
+  col1, col2 = st.columns(2)
+  with col1:
+    if user_name != '':
+      st.write(f'hello {user_name}')
+    else:
+      st.write('Enter your name')
+    with col2:
+      st.write('column 2')
 
 with tab2:
   if user_emoji != '':
